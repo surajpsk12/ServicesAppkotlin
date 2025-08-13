@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".MainActivity">
+
+    <!-- Top Decorative Arc -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="@drawable/top_arc_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Sound Wave Animation Container -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Sound Wave Bars -->
+        <View
+            android:layout_width="4dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/wave_bar"
+            android:backgroundTint="#E3F2FD" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/wave_bar"
+            android:backgroundTint="#BBDEFB" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/wave_bar"
+            android:backgroundTint="#90CAF9" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/wave_bar"
+            android:backgroundTint="#64B5F6" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="28dp"
+            android:background="@drawable/wave_bar"
+            android:backgroundTint="#42A5F5" />
+
+    </LinearLayout>
+
+    <!-- Main Title -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Play the Default Ringtone"
+        android:textAlignment="center"
+        android:textColor="#1A237E"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-light"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="6dp"
+        android:shadowColor="#80000000"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Tap the buttons below to control your device's ringtone"
+        android:textAlignment="center"
+        android:textColor="#5C6BC0"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"
+        android:alpha="0.8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <!-- Main Card Container -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="48dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="16dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="40dp"
+            android:gravity="center">
+
+            <!-- Volume Icon -->
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginBottom="32dp"
+                android:src="@drawable/ic_volume_up"
+                android:background="@drawable/circle_background"
+                android:backgroundTint="#F3E5F5"
+                android:padding="16dp"
+                app:tint="#673AB7" />
+
+            <!-- Play Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/playRingtone"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginBottom="20dp"
+                android:text="PLAY RINGTONE"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.02"
+                app:backgroundTint="@drawable/play_button_selector"
+                app:cornerRadius="32dp"
+                app:elevation="8dp"
+                app:icon="@drawable/ic_play_arrow"
+                app:iconTint="@android:color/white"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:rippleColor="#80FFFFFF"
+                style="@style/Widget.MaterialComponents.Button" />
+
+            <!-- Stop Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/stopRingtone"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="STOP RINGTONE"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.02"
+                app:backgroundTint="@drawable/stop_button_selector"
+                app:cornerRadius="32dp"
+                app:elevation="8dp"
+                app:icon="@drawable/ic_stop"
+                app:iconTint="@android:color/white"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:rippleColor="#80FFFFFF"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom Decorative Elements -->
+    <View
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/floating_circle"
+        android:backgroundTint="#E8EAF6"
+        android:alpha="0.6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/floating_circle"
+        android:backgroundTint="#C5CAE9"
+        android:alpha="0.7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/floating_circle"
+        android:backgroundTint="#9FA8DA"
+        android:alpha="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
